@@ -11,9 +11,7 @@ public class StatsService {
     }
 
     public int middleMonthSales(int[] sales) {
-      StatsService service = new StatsService();
-        int middlesale = service.sumAllSales(sales) / sales.length;
-        return middlesale;
+        return sumAllSales(sales) / sales.length;
     }
 
     public int findMaxMonth(int[] sales) {
@@ -43,20 +41,18 @@ public class StatsService {
     }
 
     public int belowMiddleSale(int[] sales) {
-        StatsService service = new StatsService();
         int belowMiddle = 0;
         for (int sale : sales) {
-            if (service.middleMonthSales(sales) < sale)
+            if (middleMonthSales(sales) < sale)
             belowMiddle += 1;
         }
         return belowMiddle;
     }
 
     public int aboveMiddleSale(int[] sales) {
-        StatsService service = new StatsService();
         int aboveMiddle = 0;
         for (int sale : sales) {
-            if (service.middleMonthSales(sales) > sale)
+            if (middleMonthSales(sales) > sale)
                 aboveMiddle += 1;
         }
         return aboveMiddle;
